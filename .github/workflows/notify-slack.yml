@@ -9,3 +9,8 @@ jobs:
         with:
           message: Holaaa
           slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+      - uses: ./.github/actions/notify-slack
+        with:
+          message: Adióooss!
+          slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          type: danger

@@ -1,5 +1,6 @@
 const message = process.env.INPUT_MESSAGE;
 const slackWebhookUrl = process.env.INPUT_SLACK_WEBHOOK_URL;
+const messageType = process.env.INPUT_TYPE;
 
 if (!message) {
   console.error("missing 'message' required param");
@@ -17,7 +18,9 @@ const main = async () => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ attachments: [{ text: message, color: "good" }] }),
+    body: JSON.stringify({
+      attachments: [{ text: message, color: messageType }],
+    }),
   });
 
   console.log(response);

@@ -7,6 +7,10 @@ inputs:
   slack_webhook_url:
     description: The Slack's webhook url
     required: true
+  type:
+    description: The message type (good, warning, danger)
+    required: false
+    default: good
 outputs:
   sent_message:
     description: The date with message sent
