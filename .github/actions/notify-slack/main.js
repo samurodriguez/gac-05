@@ -1,3 +1,5 @@
+import * as core from "@actions/core";
+
 const message = process.env.INPUT_MESSAGE;
 const slackWebhookUrl = process.env.INPUT_SLACK_WEBHOOK_URL;
 const messageType = process.env.INPUT_TYPE;
@@ -13,7 +15,7 @@ if (!slackWebhookUrl) {
 }
 
 const main = async () => {
-  const response = await fetch(slackWebhookUrl, {
+  await fetch(slackWebhookUrl, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -23,7 +25,7 @@ const main = async () => {
     }),
   });
 
-  console.log(response);
+  core.setOutput("sent_message", `${new Date().getUTCDate()} - ${message}`);
 };
 
 main();
