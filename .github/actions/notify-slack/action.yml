@@ -4,6 +4,9 @@ inputs:
   message:
     description: The message to send
     required: true
+  slack_webhook_url:
+    description: The Slack's webhook url
+    required: true
 outputs:
   sent_message:
     description: The date with message sent
