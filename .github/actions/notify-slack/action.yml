@@ -1,0 +1,12 @@
+name: notify-slack
+description: Sends a message to slack
+inputs:
+  message:
+    description: The message to send
+    required: true
+outputs:
+  sent_message:
+    description: The date with message sent
+runs:
+  using: node20
+  main: main.js
