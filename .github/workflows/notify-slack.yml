@@ -6,3 +6,5 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: ./.github/actions/notify-slack
+        with:
+          message: Holaaa
