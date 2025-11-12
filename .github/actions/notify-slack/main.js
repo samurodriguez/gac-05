@@ -11,4 +11,16 @@ if (!slackWebhookUrl) {
   process.exit(1);
 }
 
-console.log(message);
+const main = async () => {
+  const response = await fetch(slackWebhookUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ text: message }),
+  });
+
+  console.log(response);
+};
+
+main();

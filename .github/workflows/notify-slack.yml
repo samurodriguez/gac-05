@@ -8,3 +8,4 @@ jobs:
       - uses: ./.github/actions/notify-slack
         with:
           message: Holaaa
+          slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
