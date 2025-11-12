@@ -4,16 +4,12 @@ jobs:
   notify-slack:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v6
-      - run: npm ci
-        working-directory: ./.github/actions/notify-slack
-      - uses: ./.github/actions/notify-slack
+      - uses: samurodriguez/.github/actions/notify-slack@main
         with:
           message: Holaaa
           slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
         id: saludar
-      - uses: ./.github/actions/notify-slack
+      - uses: samurodriguez/.github/actions/notify-slack@main
         with:
           message: Adióooss!
           slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
