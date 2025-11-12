@@ -9,8 +9,12 @@ jobs:
         with:
           message: Holaaa
           slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+        id: saludar
       - uses: ./.github/actions/notify-slack
         with:
           message: Adióooss!
           slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
           type: danger
+        id: despedir
+      - run: echo ${{ steps.saludar.outputs.sent_message }}
+      - run: echo ${{ steps.despedir.outputs.sent_message }}
