@@ -4,4 +4,4 @@ jobs:
   notify-slack:
     runs-on: ubuntu-latest
     steps:
-      - uses: .github/actions/notify-slack/action.yml
+      - uses: ./.github/actions/notify-slack
