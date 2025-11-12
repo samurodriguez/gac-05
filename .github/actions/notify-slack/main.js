@@ -17,7 +17,7 @@ const main = async () => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ text: message }),
+    body: JSON.stringify({ attachments: [{ message, color: "good" }] }),
   });
 
   console.log(response);
